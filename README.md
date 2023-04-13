@@ -14,3 +14,7 @@ ROADM: equipamento que permite a reconfiguração remota dos comprimentos de ond
 Este programa está bem simples por que não está levando em consideração as variáves de tipo de terreno, se é distribuição aérea ou subterrânea, comprimento de onda e atenuação de sinal.
 
 Segue passo a passo para execução do mesmo:
+
+1. fazer download do jar do antlr
+    wget https://www.antlr.org/download/antlr-4.12.0-complete.jar
+2. renomear: mv antlr-4.12.0-complete.jar antlr.jar
