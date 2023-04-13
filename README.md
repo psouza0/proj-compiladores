@@ -18,3 +18,5 @@ Segue passo a passo para execução do mesmo:
 1. fazer download do jar do antlr
     wget https://www.antlr.org/download/antlr-4.12.0-complete.jar
 2. renomear: mv antlr-4.12.0-complete.jar antlr.jar
+3. executar o .jar para a gramática
+    java -jar antlr.jar FiberType.g4
