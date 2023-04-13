@@ -1,0 +1,4 @@
+Use fiber type A for distances up to 5 km
+Use fiber type B for distances up to 15 km Add 1 OADM every 7 km
+Use fiber type C for distances up to 40 km Add 1 ROADM every 10 km
+Use fiber type D for distances up to 70 km Add 1 ROADM every 10 km

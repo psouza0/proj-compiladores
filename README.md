@@ -22,3 +22,4 @@ Segue passo a passo para execução do mesmo:
     java -jar antlr.jar FiberType.g4
 4. execução do ocompilar para criação das classes
     javac -cp antlr.jar:. *.java
+5. criação do input.exp
