@@ -23,3 +23,5 @@ Segue passo a passo para execução do mesmo:
 4. execução do ocompilar para criação das classes
     javac -cp antlr.jar:. *.java
 5. criação do input.exp
+6. execução do Main
+    java -cp antlr.jar:. Main

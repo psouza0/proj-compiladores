@@ -1,0 +1,1 @@
+(distanceAndFiberTypeSelection (fibertypeSelection Use fiber type  (fiberType A))   for distances up to (distance  ) 10 km)
