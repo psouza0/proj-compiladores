@@ -17,7 +17,7 @@ public class FiberTypeParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, T__11=12, INT=13, SPACES=14, NUMBER=15;
+		T__9=10, T__10=11, NUMBER=12, SPACES=13, INT=14;
 	public static final int
 		RULE_distance = 0, RULE_fiberType = 1, RULE_opticalComponent = 2, RULE_fibertypeSelection = 3, 
 		RULE_opticalComponentAddition = 4, RULE_distanceAndFiberTypeSelection = 5;
@@ -31,15 +31,15 @@ public class FiberTypeParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'A'", "'B'", "'C'", "'D'", "'OADM'", "'ROADM'", "'Use fiber type '", 
-			"'Add '", "' '", "' every '", "'km'", "'for distances up to'"
+			null, "'A'", "'B'", "'C'", "'D'", "'OADM'", "'ROADM'", "'Use fiber type'", 
+			"'Add'", "'every'", "'km'", "'for distances up to'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, "INT", "SPACES", "NUMBER"
+			"NUMBER", "SPACES", "INT"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -271,10 +271,6 @@ public class FiberTypeParser extends Parser {
 		public TerminalNode NUMBER(int i) {
 			return getToken(FiberTypeParser.NUMBER, i);
 		}
-		public List<TerminalNode> INT() { return getTokens(FiberTypeParser.INT); }
-		public TerminalNode INT(int i) {
-			return getToken(FiberTypeParser.INT, i);
-		}
 		public OpticalComponentContext opticalComponent() {
 			return getRuleContext(OpticalComponentContext.class,0);
 		}
@@ -303,19 +299,13 @@ public class FiberTypeParser extends Parser {
 			setState(22);
 			match(NUMBER);
 			setState(23);
-			match(INT);
+			opticalComponent();
 			setState(24);
 			match(T__8);
 			setState(25);
-			opticalComponent();
+			match(NUMBER);
 			setState(26);
 			match(T__9);
-			setState(27);
-			match(NUMBER);
-			setState(28);
-			match(INT);
-			setState(29);
-			match(T__10);
 			}
 		}
 		catch (RecognitionException re) {
@@ -337,7 +327,6 @@ public class FiberTypeParser extends Parser {
 		public DistanceContext distance() {
 			return getRuleContext(DistanceContext.class,0);
 		}
-		public TerminalNode INT() { return getToken(FiberTypeParser.INT, 0); }
 		public OpticalComponentAdditionContext opticalComponentAddition() {
 			return getRuleContext(OpticalComponentAdditionContext.class,0);
 		}
@@ -362,22 +351,20 @@ public class FiberTypeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(31);
+			setState(28);
 			fibertypeSelection();
-			setState(32);
-			match(T__11);
-			setState(33);
-			distance();
-			setState(34);
-			match(INT);
-			setState(35);
+			setState(29);
 			match(T__10);
-			setState(37);
+			setState(30);
+			distance();
+			setState(31);
+			match(T__9);
+			setState(33);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==T__7) {
 				{
-				setState(36);
+				setState(32);
 				opticalComponentAddition();
 				}
 			}
@@ -396,30 +383,28 @@ public class FiberTypeParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u000f(\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0004\u0001\u000e$\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
 		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
 		"\u0005\u0007\u0005\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001"+
 		"\u0002\u0001\u0002\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0004\u0001"+
 		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
-		"\u0004\u0001\u0004\u0001\u0004\u0001\u0005\u0001\u0005\u0001\u0005\u0001"+
-		"\u0005\u0001\u0005\u0001\u0005\u0003\u0005&\b\u0005\u0001\u0005\u0000"+
-		"\u0000\u0006\u0000\u0002\u0004\u0006\b\n\u0000\u0002\u0001\u0000\u0001"+
-		"\u0004\u0001\u0000\u0005\u0006\"\u0000\f\u0001\u0000\u0000\u0000\u0002"+
-		"\u000e\u0001\u0000\u0000\u0000\u0004\u0010\u0001\u0000\u0000\u0000\u0006"+
-		"\u0012\u0001\u0000\u0000\u0000\b\u0015\u0001\u0000\u0000\u0000\n\u001f"+
-		"\u0001\u0000\u0000\u0000\f\r\u0005\u000f\u0000\u0000\r\u0001\u0001\u0000"+
-		"\u0000\u0000\u000e\u000f\u0007\u0000\u0000\u0000\u000f\u0003\u0001\u0000"+
-		"\u0000\u0000\u0010\u0011\u0007\u0001\u0000\u0000\u0011\u0005\u0001\u0000"+
-		"\u0000\u0000\u0012\u0013\u0005\u0007\u0000\u0000\u0013\u0014\u0003\u0002"+
-		"\u0001\u0000\u0014\u0007\u0001\u0000\u0000\u0000\u0015\u0016\u0005\b\u0000"+
-		"\u0000\u0016\u0017\u0005\u000f\u0000\u0000\u0017\u0018\u0005\r\u0000\u0000"+
-		"\u0018\u0019\u0005\t\u0000\u0000\u0019\u001a\u0003\u0004\u0002\u0000\u001a"+
-		"\u001b\u0005\n\u0000\u0000\u001b\u001c\u0005\u000f\u0000\u0000\u001c\u001d"+
-		"\u0005\r\u0000\u0000\u001d\u001e\u0005\u000b\u0000\u0000\u001e\t\u0001"+
-		"\u0000\u0000\u0000\u001f \u0003\u0006\u0003\u0000 !\u0005\f\u0000\u0000"+
-		"!\"\u0003\u0000\u0000\u0000\"#\u0005\r\u0000\u0000#%\u0005\u000b\u0000"+
-		"\u0000$&\u0003\b\u0004\u0000%$\u0001\u0000\u0000\u0000%&\u0001\u0000\u0000"+
-		"\u0000&\u000b\u0001\u0000\u0000\u0000\u0001%";
+		"\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0003\u0005\"\b"+
+		"\u0005\u0001\u0005\u0000\u0000\u0006\u0000\u0002\u0004\u0006\b\n\u0000"+
+		"\u0002\u0001\u0000\u0001\u0004\u0001\u0000\u0005\u0006\u001e\u0000\f\u0001"+
+		"\u0000\u0000\u0000\u0002\u000e\u0001\u0000\u0000\u0000\u0004\u0010\u0001"+
+		"\u0000\u0000\u0000\u0006\u0012\u0001\u0000\u0000\u0000\b\u0015\u0001\u0000"+
+		"\u0000\u0000\n\u001c\u0001\u0000\u0000\u0000\f\r\u0005\f\u0000\u0000\r"+
+		"\u0001\u0001\u0000\u0000\u0000\u000e\u000f\u0007\u0000\u0000\u0000\u000f"+
+		"\u0003\u0001\u0000\u0000\u0000\u0010\u0011\u0007\u0001\u0000\u0000\u0011"+
+		"\u0005\u0001\u0000\u0000\u0000\u0012\u0013\u0005\u0007\u0000\u0000\u0013"+
+		"\u0014\u0003\u0002\u0001\u0000\u0014\u0007\u0001\u0000\u0000\u0000\u0015"+
+		"\u0016\u0005\b\u0000\u0000\u0016\u0017\u0005\f\u0000\u0000\u0017\u0018"+
+		"\u0003\u0004\u0002\u0000\u0018\u0019\u0005\t\u0000\u0000\u0019\u001a\u0005"+
+		"\f\u0000\u0000\u001a\u001b\u0005\n\u0000\u0000\u001b\t\u0001\u0000\u0000"+
+		"\u0000\u001c\u001d\u0003\u0006\u0003\u0000\u001d\u001e\u0005\u000b\u0000"+
+		"\u0000\u001e\u001f\u0003\u0000\u0000\u0000\u001f!\u0005\n\u0000\u0000"+
+		" \"\u0003\b\u0004\u0000! \u0001\u0000\u0000\u0000!\"\u0001\u0000\u0000"+
+		"\u0000\"\u000b\u0001\u0000\u0000\u0000\u0001!";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
