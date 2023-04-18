@@ -18,10 +18,10 @@ Segue passo a passo para execução do mesmo:
 1. fazer download do jar do antlr
     wget https://www.antlr.org/download/antlr-4.12.0-complete.jar
 2. renomear: mv antlr-4.12.0-complete.jar antlr.jar
-3. executar o .jar para a gramática
+3. executar o .jar para a gramática:
     java -jar antlr.jar FiberType.g4
-4. execução do ocompilar para criação das classes
+4. execução do ocompilar para criação das classes:
     javac -cp antlr.jar:. *.java
 5. criação do input.exp
-6. execução do Main
+6. execução do Main:
     java -cp antlr.jar:. Main
