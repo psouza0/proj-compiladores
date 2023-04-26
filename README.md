@@ -1,5 +1,5 @@
 # proj-compiladores
-Inicialmente o intuito deste programa seria definir um tipo de fibra ópitca para determiandas distâncias, visando agilizar a escolha da fibra de acordo com as métricas inseridas, que para simplificação de projeto, será a distância.
+Inicialmente o intuito deste programa seria definir um tipo de fibra ópitca para determinadas distâncias, visando agilizar a escolha da fibra de acordo com as métricas inseridas, que para simplificação de projeto, será a distância.
 
 As regras são:
 1. para distância até 7km, será escolhida a fibra do tipo A;
